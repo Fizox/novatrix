@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Novatrix Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--silver);
+            padding: 3rem 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--graphite);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-6px) scale(1.07);
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price span {
+            font-size: 1.2rem;
+            color: var(--slate);
+            font-weight: 400;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--silver);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 8px;
+            height: 8px;
+            background: var(--graphite);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .faq-section {
+            background: var(--light);
+            padding: 6rem 0 0 0;
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--silver);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--graphite);
+        }
+
+        .faq-item p {
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        .faq-intro {
+            margin: auto;
+            text-align: center;
+            margin-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .faq-intro h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card:hover,
+            .pricing-card.featured:hover {
+                transform: translateY(-6px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+    
+    <nav>
+        <div class="container">
+        <div href="index.html" class="logo-container">
+          <img
+            src="img/mini-logo.png"
+            alt="novatrix digital mini logo"
+            class="mini-logo"
+          />
+
+          <span class="logo-text">NOVATRIX DIGITAL</span>
+        </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="cta-btn">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Transparent Maintenance Plans</h1>
+            <p>All-inclusive monthly plans with no hidden fees. Hosting, security, support, and updates included.</p>
+        </div>
+    </div>
+
+    <section class="pricing-guide">
+        <div class="container">
+
+            <div class="pricing-category animate-on-scroll">
+                <h2>Monthly Service / Subscription Plans</h2>
+
+                <div class="pricing-grid">
+
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Starter</h3>
+                        <div class="plan-price">$149 <span>/ month</span></div>
+                        <ul class="plan-features">
+                            <li><span class="check-icon"></span>Hosting</li>
+                            <li><span class="check-icon"></span>Security &amp; updates</li>
+                            <li><span class="check-icon"></span>Weekly backups</li>
+                            <li><span class="check-icon"></span>Uptime monitoring</li>
+                            <li><span class="check-icon"></span>Email support</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <h3 class="plan-name">Growth <span style="color: var(--graphite); font-size: 0.8rem; text-transform: uppercase;">Most Popular</span></h3>
+                        <div class="plan-price">$299 <span>/ month</span></div>
+                        <ul class="plan-features">
+                            <li><span class="check-icon"></span>Everything in Starter</li>
+                            <li><span class="check-icon"></span>Unlimited small content edits</li>
+                            <li><span class="check-icon"></span>Performance optimization</li>
+                            <li><span class="check-icon"></span>Basic SEO monitoring</li>
+                            <li><span class="check-icon"></span>Priority support</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Scale</h3>
+                        <div class="plan-price">$599 <span>/ month</span></div>
+                        <ul class="plan-features">
+                            <li><span class="check-icon"></span>Everything in Growth</li>
+                            <li><span class="check-icon"></span>Advanced security</li>
+                            <li><span class="check-icon"></span>Monthly SEO optimization</li>
+                            <li><span class="check-icon"></span>Speed &amp; analytics reports</li>
+                            <li><span class="check-icon"></span>Dedicated account manager</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<section class="faq-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">FAQ</div>
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-description">
+                    Everything you need to know about our pricing and services.
+                </p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <h3>What's included in the monthly price?</h3>
+                    <p>The monthly service plans cover hosting, security, updates, and support as detailed in each tier. They are designed to ensure your website remains secure, fast, and up-to-date without hidden fees.</p>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <h3>Is there a setup fee?</h3>
+                    <p>The "One-time Website Build Fees" are the initial setup costs for creating the website. Once the site is built, the monthly service plan begins. We aim for transparent pricing, so all initial costs are covered by the one-time build fee.</p>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <h3>Can I cancel anytime?</h3>
+                    <p>Yes. All monthly service plans are month-to-month with no long-term contracts. Cancel anytime with 30 days notice. We'll provide you with all your website files and data.</p>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <h3>What if I need custom development?</h3>
+                    <p>Custom web application/dashboard builds are quoted based on complexity. For ongoing development needs within a monthly plan, you can purchase additional hours or opt for a higher-tier plan that includes more comprehensive support.</p>
+                </div>
+            </div>
+
+            <div class="faq-intro">
+                <h3>Have Questions or Need a Custom Plan?</h3>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-container">
+                        
+                            <img src="img/logo.png" alt="Novatrix Digital Logo" class="logo-image">
+                    </div>
+                    <p>Building the core of your online business with infrastructure-level reliability.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Website Design</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Hosting & Maintenance</a></li>
+                        <li><a href="services.html">Performance Optimization</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">SLA Agreement</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Novatrix Digital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('mobile-open');
+        }
+
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
