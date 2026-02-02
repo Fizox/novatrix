@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+{% block title %}
     <title>Pricing - Novatrix Digital</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+{% endblock title %}
+{% block css %}
     <style>
         .pricing-grid {
             display: grid;
@@ -139,37 +136,8 @@
             }
         }
     </style>
-</head>
-<body>
-    <div class="grid-bg"></div>
-    
-    <nav>
-        <div class="container">
-        <div href="index.html" class="logo-container">
-          <img
-            src="img/mini-logo.png"
-            alt="novatrix digital mini logo"
-            class="mini-logo"
-          />
-
-          <span class="logo-text">NOVATRIX DIGITAL</span>
-        </div>
-            
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="pricing.html" class="active">Pricing</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="cta-btn">Get Started</a></li>
-            </ul>
-        </div>
-    </nav>
+{% endblock css %}
+{% block content %}
 
     <div class="page-header">
         <div class="container">
@@ -266,75 +234,4 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo-container">
-                        
-                            <img src="img/logo.png" alt="Novatrix Digital Logo" class="logo-image">
-                    </div>
-                    <p>Building the core of your online business with infrastructure-level reliability.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Website Design</a></li>
-                        <li><a href="services.html">Web Development</a></li>
-                        <li><a href="services.html">Hosting & Maintenance</a></li>
-                        <li><a href="services.html">Performance Optimization</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">SLA Agreement</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 Novatrix Digital. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('mobile-open');
-        }
-
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+{% endblock %}
