@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Novatrix Digital</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="img/mini-logow.png" type="image/x-icon">
+{% extends 'base.html' %}
 
+{% block title %}
+    <title>About Us - Novatrix Digital</title>
+{% endblock title %}
+    
+{% block css %}
     <style>
         .about-content {
             max-width: 900px;
@@ -159,38 +156,8 @@
             }
         }
     </style>
-</head>
-<body>
-    <div class="grid-bg"></div>
-    
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-        <div href="index.html" class="logo-container">
-          <img
-            src="img/mini-logo.png"
-            alt="novatrix digital mini logo"
-            class="mini-logo"
-          />
-
-          <span class="logo-text">NOVATRIX DIGITAL</span>
-        </div>
-            
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
+{% endblock css %}
+{% block content %}
 
     <!-- Page Header -->
     <div class="page-header">
@@ -223,7 +190,7 @@
 
             <div class="stats-grid">
                 <div class="stat-item animate-on-scroll">
-                    <div class="stat-value">150+</div>
+                    <div class="stat-value">30+</div>
                     <div class="stat-label">Projects Delivered</div>
                 </div>
                 <div class="stat-item animate-on-scroll">
@@ -280,152 +247,15 @@
             </div>
         </div>
     </section>
-
-    <!-- Team Section -->
     <section class="team-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-label">Our Team</div>
-                <h2>Senior Engineers, Global Team</h2>
-                <p class="section-description">
-                    Distributed across time zones, united by a commitment to excellence.
-                </p>
-            </div>
-
-            <div class="team-grid">
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>Alex Chen</h3>
-                    <div class="team-role">Lead Engineer</div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>Sarah Martinez</h3>
-                    <div class="team-role">Full Stack Dev</div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>James Wilson</h3>
-                    <div class="team-role">DevOps Engineer</div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>Maya Patel</h3>
-                    <div class="team-role">Frontend Specialist</div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>David Kim</h3>
-                    <div class="team-role">Backend Engineer</div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>Emma Thompson</h3>
-                    <div class="team-role">UI/UX Designer</div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>Marcus Johnson</h3>
-                    <div class="team-role">Security Engineer</div>
-                </div>
-
-                <div class="team-member animate-on-scroll">
-                    <div class="team-photo">[Photo]</div>
-                    <h3>Lisa Anderson</h3>
-                    <div class="team-role">Client Success</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section>
         <div class="container" style="text-align: center; padding: 4rem 0;">
             <div class="animate-on-scroll">
                 <h2>Want to Work With Us?</h2>
-                <p style="font-size: 1.2rem; color: var(--slate); margin: 1.5rem 0 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.2rem; color: var(--white); margin: 1.5rem 0 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                     We're selective about who we work with. Let's talk and see if we're a good fit.
                 </p>
-                <a href="contact.html" class="btn-primary">Start a Conversation</a>
+                <a href="contact.html" class="btn-secondary">Start a Conversation</a>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo-container">
-                        
-                            <img src="img/logo.png" alt="Novatrix Digital Logo" class="logo-image">
-                    </div>
-                    <p>Building the core of your online business with infrastructure-level reliability.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Website Design</a></li>
-                        <li><a href="services.html">Web Development</a></li>
-                        <li><a href="services.html">Hosting & Maintenance</a></li>
-                        <li><a href="services.html">Performance Optimization</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">SLA Agreement</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 Novatrix Digital. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('mobile-open');
-        }
-
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+{% endblock %}
